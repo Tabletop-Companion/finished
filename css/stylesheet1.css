@@ -1,0 +1,386 @@
+*{
+
+    
+
+}
+header{
+/*    background-color: black;*/
+    width: 100%;
+    height: 100px;
+}
+ 
+.header-logo img{
+
+    width: 80px;
+    margin-bottom:5px;
+}
+.header-img img{
+    width: 200px;
+    margin-bottom:5px;
+    margin-left: 50px;
+}
+header nav ul {
+    float: right;
+}
+     
+header nav ul li {
+
+    display: inline-block;
+    float:right;
+    list-style: none;
+    padding: 5 60px;
+
+}
+header nav ul li a {
+    font-size: 18px;
+    color: black;
+    text-transform: uppercase;
+    font-family: fantasy;
+    text-align: center;
+}
+
+header ul li a:hover
+{
+background-color: brown;
+display: block;
+border-style: solid;
+}
+
+.wrapper{
+    display: flex;
+    position: relative;
+}
+.wrapper .side{
+    position: fixed;
+}
+.side{
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.side nav ul{
+    float: right;
+}
+.side nav ul li{
+     padding: 60px;
+}
+.side nav ul li a{
+  background-color: #FB6D4C;
+  border: none;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 15px;
+  font-family: fantasy;
+  margin-bottom: 100px;
+}
+
+/*
+.side li 
+{
+    position: absolute;
+    display: inline-block;
+    text-align: left;
+    float: right;
+    margin-left: 100px;
+    padding: 40 10 70px;
+
+}
+.side li a
+{
+  background-color: #FB6D4C;
+  border: none;
+  color: black;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 15px;
+  font-family: fantasy;
+  margin-bottom: 100px;
+
+}
+*/
+.body{
+
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+body
+{
+    background-image: url(background.png);
+    width: 100%;
+    height: 100%;
+}
+
+h4 {
+  display: inline-block;
+  margin-right: 20em;
+}
+
+
+
+.slider{
+    width: 800px;
+    height: 500px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 500px;
+   display: flex;
+
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img{
+    width: 800px;
+    height: 500px;
+}
+
+/* css for manual slide navigation*/
+
+
+.navigation-manual{
+    position: absolute;
+    width: 800px;
+    margin-top: -40px;
+    display: flex;
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background: #40D3DC;
+}
+
+#radio1:checked ~ .first {
+    margin-left: 0;
+}
+#radio2:checked ~ .first {
+    margin-left: -20%;
+}
+#radio3:checked ~ .first {
+    margin-left: -40%;
+}
+
+/* for automatic slide*/
+
+.navigation-auto {
+    position: absolute;
+    display: flex;
+    width: 800px;
+    justify-content: center;
+    margin-top: 460px;
+}
+
+.navigation-auto div{
+    border: 2px solid #40D3DC;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navigation-auto div:not(:last-child)
+{
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navigation-auto .auto-btn1{
+    background: #40D3DC;
+}
+
+#radio2:checked ~ .navigation-auto .auto-btn2{
+    background: #40D3DC;
+}
+#radio3:checked ~ .navigation-auto .auto-btn3{
+    background: #40D3DC;
+}
+
+
+
+.slideshow p{
+    font-family: fantasy;
+    font-size: 24px;
+    margin-top: 180px;
+    margin-left: 300px;
+}
+
+.slideshow img{
+    margin-left: 150px;
+}
+
+#cardio-slides
+{
+    overflow: hidden;
+}
+
+#cardio-slides figure {
+        position: relative;
+        width: 500%;  
+margin-top: 200px;
+    
+        left: 0;
+        animation: 20s slider infinite;
+    }
+#cardio-slides figure img
+{
+            width: 20%;
+            height: 300px;
+            float: left;
+ }
+
+@keyframes slider {
+    0% {
+        left: 0;
+    }
+    20% {
+        left: 0;
+    }
+    26% {
+        left: -110%;   
+    }
+    
+    40% {
+        left: -110%;
+    }
+    51% {
+        left: -210%
+    }
+    70% {
+        left: -210%
+    }
+    76% {
+        left: -310%
+    }
+    95% {
+        left: -310%;
+    }
+    100% {
+        left: -430%;
+    }
+}
+
+
+/*------------------Rules------------------*/
+
+.ruleQuestions h4{
+    color: antiquewhite;
+}
+
+.ruleQuestions a{
+
+}
+
+/*------------------FAQ------------------*/
+/* Style the buttons that are used to open and close the accordion panel */
+
+.accordion {
+    background-color: white;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font-size: 15px;
+    outline: none;
+    transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active, .accordion:hover {
+/*    background-color: #ccc;*/
+}
+.accordion:after {
+    content: '\002B';
+    color:  #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+     
+}
+.active:after{
+    content: '\2212'
+}
+/* Style the accordion panel. Note: hidden by default */
+.panel 
+{
+    padding: 0 18px;
+/*    background-color: white;*/
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2 ease-out;
+}
+
+.category {
+/*    background-color:  #FF9E79;*/
+    width: 150px;
+/*    border-right: 300px;*/
+    border: 5px solid #FF9E79;
+    padding: 30px;
+    margin: 20px;
+}
+div.category{
+  margin-top: 200px;
+}
+
+.category li {
+    font-family: sans-serif;
+    list-style: none;
+}
+
+.category a{
+     text-decoration: none;
+     color: black;
+}
+
+
+.questions{
+  width: 400px;
+  padding: 10px;
+  border: 5px solid #FF9E79;
+  
+}
+
+div.questions{
+position: absolute;
+    right: 300px;
+    bottom: 300px;
+}
+
+
+
+
+
+

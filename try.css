@@ -1,0 +1,531 @@
+html{
+    background-image: url(css/background.png);
+      background-repeat:no-repeat;
+  background-size: auto;
+}
+
+nav{
+    grid-area: nav;
+}
+
+.header-logo img{
+    width: 80px;
+    margin-bottom:5px;
+}
+
+.header-img img{
+    width: 200px;
+    margin-bottom:5px;
+    margin-left: 50px;
+}
+nav ul {
+    float: right;
+}
+     
+nav ul li {
+    display: inline-block;
+    float:right;
+    list-style: none;
+    padding: 5 60px;
+
+}
+nav ul li a {
+    font-size: 18px;
+    color: white;
+    text-transform: uppercase;
+    font-family: fantasy;
+    text-align: center;
+    text-decoration: none;
+}
+
+nav ul li a:hover
+{
+background-color: brown;
+display: block;
+border-style: solid;
+}
+
+#sideBar{
+     grid-area: sideBar;
+}
+
+#sideBar ul{
+    float: right;
+}
+
+#sideBar ul li{
+    padding: 40px;
+    list-style: none;
+}
+
+#sideBar ul li button{
+    background-color: #FB6D4C;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    color: white;
+    border-radius: 10px;
+    font-family: fantasy;
+    font-size: 16px;
+    width: 70%;
+}
+
+#sideBar ul li button:hover{
+    background-color: brown;
+    
+/*border-style: solid;*/
+}
+
+/*-------------------FAQ-------------*/
+.container{  
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 0.9fr 2.3fr 1.2fr;
+    grid-template-rows: 0.3fr 0.3fr 0.5fr;
+    grid-template-areas: 
+    "nav nav nav"
+    "header header sideBar"
+    "category questions sideBar";
+}
+header{
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-size: 30px;
+/*    font-family:inherit;*/
+/*    text-transform: uppercase;*/
+    text-align: center;
+    color: bisque;
+    grid-area: header;
+    font-family: 'Rammetto One', cursive;
+    text-decoration: underline beige;
+}
+
+#category{
+    grid-area: category;
+     border: 5px solid white;
+    text-align: center;
+    background-color: rgba(255, 0, 0, 0.3);
+    margin-left: 20px;
+}
+
+#category a:hover{
+    background-color: brown;
+    display: block;
+    border-style: solid
+}
+
+#category li {
+    font-family: sans-serif;
+    list-style: none;
+     margin-top: 10px;
+}
+
+#category a{
+    text-align: center;
+     text-decoration: none;
+     color:white;
+    font-family:fantasy;
+    opacity: 5;
+}
+
+#questions{
+     grid-area: questions;
+}
+
+#questions{
+margin-left: 70px;
+padding: 10px;
+}
+
+/* Style the buttons that are used to open and close the accordion panel */
+
+.accordion {
+   background-color: #CAB7A1;
+    cursor: pointer;
+    padding: 20px;
+    width: 100%;
+    text-align: left;
+    border: none;
+    font-size: 16px;
+    outline: none;
+    transition: 0.4s;
+    color: white;
+    font-family:inherit;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+
+.active, .accordion:hover {
+    background-color: brown;
+}
+.accordion:after {
+    content: '\002B';
+    color:  #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+     
+}
+.active:after{
+    content: '\2212'
+}
+/* Style the accordion panel. Note: hidden by default */
+.panel 
+{
+    font-size: 14px;
+    padding: 0 18px;
+   background-color: bisque;
+    font-family: sans-serif;
+    color: grey;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2 ease-out;
+}
+
+/*--------------------Sign In------------*/
+
+.signInContainer{
+       display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1.7fr 1.2fr ;
+    grid-template-rows: 0.3fr 0.3fr 0.3fr 0.3fr;
+    grid-template-areas: 
+    "nav nav nav"
+    "signInheader signInheader sideBar"
+    "signInImage signInMain sideBar"
+    "signInText signInText sideBar";
+}
+
+#signInheader, #accountHeader{
+    grid-area: signInheader;
+    font-size: 28px;
+    text-align: center;
+    margin-top: 30px;
+    font-family: 'Rammetto One', cursive;
+    text-decoration: underline dotted beige;
+    color:  bisque;
+}
+
+#signInImage{
+    margin-top: 50px;
+    margin-left: 50px;
+    grid-area: signInImage;
+    background-color:rgba(244, 226, 198, 0.8);
+}
+
+#signInImage img{
+    margin-top: 70px;
+    width: 90%;
+    opacity: 0.8;
+    margin-left: 10px;
+}
+
+#signInMain{
+    margin-top: 50px;
+    grid-area: signInMain;
+    font-family: sans-serif;
+    background-color:rgba(161, 40, 48, 0.8);
+    font-size: 30px;
+}
+#signInMain a, #signInMain input{
+    text-align: left;
+    margin-left: 30px;
+}
+
+#signInMain input, #signInMain2 input{
+    width: 80%;
+     padding: 12px 20px;
+    border: 2px solid #FB6D4C;
+    border-radius: 10px;
+    background-color: oldlace;
+}
+
+#signInMain button{
+    text-align: center;
+    margin-top: 30px;
+    background-color: #fed8b1;
+    padding: 10px 20px;
+    margin-left:150px;
+    border: none;
+    cursor: pointer;
+    color: brown;
+    border-radius: 15px;
+    font-family: sans-serif;
+    font-size: 16px;
+    width: 30%;
+}
+
+#signInMain button:hover , #logOutButton button:hover {
+  opacity: 0.8;
+}
+
+#signInInfo{
+    padding: 30px;
+    font-family: inherit;
+    color: antiquewhite;
+    margin-top: 50px;
+    line-height: 200%;
+    font-size: 20px;
+}
+
+#signInText{
+    grid-area: signInText;
+    text-align: center;
+    margin-left: 50px;
+    background-color:rgba(220, 185, 155, 0.9);
+    font-family: sans-serif;
+    color: beige;
+}
+
+#signInText a{
+    text-decoration: none;
+    color: brown;
+}
+
+/*----------------Register----------------*/
+
+.registerContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1.5fr 1.5fr 1.2fr ;
+    grid-template-rows: 0.3fr 0.3fr 1fr 0.3fr;
+    grid-template-areas: 
+    "nav nav nav nav"
+    "signInheader signInheader signInheader sideBar"
+    "signInImage signInMain signInMain2 sideBar"
+    "signInText signInText signInText sideBar";
+}
+
+#signInMain2{
+    grid-area: signInMain2;
+    margin-top: 50px;
+    font-family: sans-serif;
+    background-color:rgba(161, 40, 48, 0.8);
+    font-size: 30px;
+}
+
+#signInInfo1 {
+    padding: 30px;
+    font-family: inherit;
+    color: antiquewhite;
+    margin-top: 20px;
+    font-size: 20px;
+    line-height: 75px;
+}
+
+
+/*-----------------------Account---------------*/
+
+.accountContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr  1fr;
+    grid-template-rows: 0.3fr 0.3fr 1.5fr 0.3fr;
+    grid-template-areas: 
+    "nav nav nav "
+    "accountHeader accountHeader sideBar"
+    "accountInfo1 accountInfo2 sideBar"
+    "logOutButton logOutButton sideBar";
+}
+
+#accountHeader{
+    grid-area: accountHeader;
+}
+
+#accountInfo1{
+    grid-area: accountInfo1;
+}
+
+#accountInfo2{
+    grid-area: accountInfo2;
+}
+
+#accountInfo1, #accountInfo2{
+    margin-top: 30px;
+    background-color:rgba(255, 255, 194, 0.7);
+    border: 1px solid rgba(255, 255, 194, 0.7);
+    border-radius: 10px;
+    margin-left: 20px;
+}
+
+#subHeader1 , #subHeader2{
+    text-align: center;
+    margin-top: 30px;
+    font-size: 24px;
+    font-family: 'Rammetto One', cursive;
+    color:  #FB6D4C;
+}
+
+#subDetail1{
+    grid-area: subDetail1;
+}
+
+#subDetail2{
+    grid-area: subDetail2;
+}
+
+#subDetail1, #subDetail2{
+     text-align: center;
+    margin-top: 30px;
+}
+
+#subDetail1 a, #subDetail2 a{
+    font-family: monospace;
+    font-size: 20px;
+    padding: 10px;
+    line-height: 40px;
+    color: saddlebrown;
+   
+}
+#logOutButton{
+    grid-area: logOutButton;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#logOutButton button{
+    background-color: firebrick;
+    cursor: pointer;   
+    width: 20%;
+    padding: 15px;
+    font-family: 'Rammetto One', cursive;
+    color: antiquewhite;
+    border-radius: 15px;
+}
+
+
+/*----------------------Rules---------------------*/
+.rulesContainer{
+    display: grid;
+    height: 100vh;
+    grid-template-columns: 3fr 3fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "nav nav"
+    "rulesHeader rulesHeader "
+    "rules1 rules5"
+    "rules2 rules6"
+    "rules3 rules7"
+    "rules4 startGameButton";
+}
+
+#rulesHeader{
+    grid-area: rulesHeader;
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: 'Rammetto One', cursive;
+    text-decoration: underline dotted beige;
+    color:  bisque;
+}
+
+#rules1{
+    grid-area: rules1;
+}
+
+#rules1 a, #rules2 a,#rules3 a,#rules4 a,#rules5 a,#rules6 a,#rules7 a{
+font-family: 'Prompt', sans-serif;
+    margin-bottom: 20px;
+}
+
+input[type="radio"]{
+    display: none;
+}
+#rulesHd{
+    background-color: gray;
+    opacity: 0.8;
+    margin-right: 30px;
+    color: wheat;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+label{
+    margin-top: 10px;
+    position: relative;
+    color: black;
+    font-family: sans-serif;
+    font-size: 14px;
+    border: 2px solid beige;
+    border-radius: 5px;
+    padding: 5px 30px;
+    display: flex;
+    width: 50%;
+    align-content: center;   
+    cursor: pointer;
+           background-color: rgba(255, 255, 194, 0.7);
+}
+label:hover{
+    background-color: antiquewhite;
+}
+label:before{
+    content: "";
+    height: 10px;
+    width: 10px;
+    border: 2px solid firebrick;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+input[type="radio"]:checked + label{
+    background-color:firebrick;
+    color:  antiquewhite;
+    font-size: 14px;
+}
+
+input[type="radio"]:checked + label:before{
+    height: 10px;
+    width: 10px;
+    border: 5px solid white;
+}
+
+#rules2{
+    grid-area: rules2;
+}
+
+
+#rules3{
+    grid-area: rules3;
+}
+
+#rules4{
+    grid-area: rules4;
+}
+
+#rules5{
+    grid-area: rules5;
+
+}
+
+#rules6{
+    grid-area: rules6;
+}
+
+#rules7{
+    grid-area: rules7;
+}
+
+
+#startGameButton {
+    grid-area: startGameButton;
+}
+
+#startGameButton button {
+    margin-left: 50px;
+    margin-top: 80px;
+    font-size: 16px;
+    border: none;
+    padding: 30px;
+    border-radius: 10px;
+    background-color: coral;
+    width: 30%;
+    text-transform: uppercase;
+    font-family:fantasy;
+    color: whitesmoke;
+}
+
+#startGameButton button:hover{
+    background-color: darkseagreen;
+    
+}
