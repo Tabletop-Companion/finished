@@ -922,6 +922,8 @@ function saveGame(index) {
 	fullObj.winAmount = winAmount;
 	fullObj.playerIndex = resourceHUD.playerIndex;
 	fullObj.diceRolls = [diceHUD.diceRoll1, diceHUD.diceRoll2];
+	fullObj.randomizeBoard = randomizeBoard;
+	fullObj.randomizePorts = randomizePorts;
 	
 	var string = JSON.stringify(fullObj);
 	var title = document.getElementById("saveName"+index).value;
@@ -945,7 +947,6 @@ function saveFile(title, text, index) {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			alert(this.responseText);
 			document.getElementById("fileName"+index).innerHTML = title;
 		}
 	};
@@ -1059,13 +1060,24 @@ function loadGame(index) {
 	roundNum = fullObj.roundNum;
 	winAmount = fullObj.winAmount;
 	diceHUD.assign(fullObj.diceRolls);
+	randomizeBoard = fullObj.randomizeBoard;
+	randomizePorts = fullObj.randomizePorts;
 	
 	infoHUD.default();
 	
-	//randomize ports and board need saving and update the stuff \/ if () {
-	document.getElementById("result7").innerHTML = winAmount+" victoryPoints";
-	document.getElementById("result7").innerHTML = winAmount+" victoryPoints";
-	document.getElementById("result7").innerHTML = winAmount+" victoryPoints";
+	if (randomizeBoard)
+		document.getElementById("result5").innerHTML = "Generated Board";
+	else
+		document.getElementById("result5").innerHTML = "Default Board";
+	
+	
+	if (randomizePorts)
+		document.getElementById("result6").innerHTML = "Generated Ports";
+	else
+		document.getElementById("result6").innerHTML = "Default Ports";
+	
+	
+	document.getElementById("result7").innerHTML = winAmount+" Victory Points";
 }
 
 class HUD {
@@ -1622,6 +1634,7 @@ class BankerWindow extends HUD {
 	update() {
 		this.ratioValue = this.ratio.value;
 		this.selRes = this.resType1.value;
+		this.outRes = this.resType2.value;
 		removeAllChildNodes(this.resType1);
 		removeAllChildNodes(this.input);
 		removeAllChildNodes(this.resType2);
@@ -1648,31 +1661,6 @@ class BankerWindow extends HUD {
 			}
 		}
 		
-		var count = parseInt(this.ratioValue);
-		var index = 0;
-		
-		for (var i = 0; i < 5; i++) {
-			if (this.ratioValue == 2) {
-				index = Object.values(Type).indexOf(this.resType1.value);
-				
-				if (i > 0)
-					break;
-			} else {
-				index = i;
-			}
-			
-			var r = currentPlayer.resources[index];
-			var bankResCount = resourceCount[index];
-			
-			while (r >= count && r*this.ratioValue >= bankResCount) {
-				var inputOption = document.createElement("option");
-				inputOption.setAttribute("value", count);
-				inputOption.innerHTML = count;
-				input.appendChild(inputOption);
-				count += parseInt(this.ratioValue);
-			}
-		}
-		
 		for (let res of Object.values(Type)) {
 			if (res != this.selRes && res != "Desert") {
 				var resourceOption = document.createElement("option");
@@ -1682,7 +1670,30 @@ class BankerWindow extends HUD {
 			}
 		}
 		
-		this.resType1.value = this.selRes;
+		var count = parseInt(this.ratioValue);
+		var index = 0;
+		var index2 = 0;
+		
+		for (var i = 0; i < 5; i++) {
+			if (this.ratioValue == 2) {
+				index = Object.values(Type).indexOf(this.resType1.value);
+				index2 = Object.values(Type).indexOf(this.resType2.value);
+			} else {
+				index = i;
+			}
+			
+			var r = currentPlayer.resources[index];
+			var bankResCount = resourceCount[index];
+			var bankOutCount = resourceCount[index2];
+			
+			while (r >= count && r/this.ratioValue <= bankOutCount) {
+				var inputOption = document.createElement("option");
+				inputOption.setAttribute("value", count);
+				inputOption.innerHTML = count;
+				input.appendChild(inputOption);
+				count += parseInt(this.ratioValue);
+			}
+		}
 	}
 	
 	draw() {
@@ -1718,6 +1729,9 @@ class BankerWindow extends HUD {
 			
 			currentPlayer.resources[giveIndex] -= parseInt(this.input.value);
 			currentPlayer.resources[getIndex] += parseInt(this.output.innerHTML);
+			
+			resourceCount[giveIndex] += parseInt(this.input.value);
+			resourceCount[getIndex] -= parseInt(this.output.innerHTML);
 			
 			this.update();
 		}
@@ -2156,10 +2170,13 @@ class AdminHUD extends HUD {
 			else if (sign == "-" && players[playerIndex].victoryPoints > 0)
 				players[playerIndex].victoryPoints--;
 		} else {
-			if (sign == "+")
+			if (sign == "+") {
 				players[playerIndex].resources[resourceIndex]++;
-			else if (sign == "-" && players[playerIndex].resources[resourceIndex] > 0)
+				resourceCount[resourceIndex]--;
+			} else if (sign == "-" && players[playerIndex].resources[resourceIndex] > 0) {
 				players[playerIndex].resources[resourceIndex]--;
+				resourceCount[resourceIndex]++;
+			}
 		}
 	}
 
@@ -3091,6 +3108,7 @@ class Building {
     constructor(pos) {
         this.pos = pos;
         this.owner = currentPlayer;
+		this.node = grid.allNodes.get(this.pos.toString());
     }
 	
 	cancel() {
