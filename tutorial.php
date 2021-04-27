@@ -8,9 +8,9 @@
           <meta name="viewport" content="width=device-width, initial scale=1.0">
           <link rel="stylesheet" href="css/stylesheet.css">
 
-        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap" rel="stylesheet">
-            <link href="https://fonts.googleapis.com/css2?family=Rammetto+One&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300anddisplay=swap" rel="stylesheet">
+            <link href="https://fonts.googleapis.com/css2?family=Rammetto+Oneanddisplay=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petchanddisplay=swap" rel="stylesheet">
             </head>
     <body>
     <div class="tutorialContainer">
@@ -57,7 +57,7 @@
  
     <div class="mySlides fade">
     <img src="img/tutorial1.png" style="width:1000px" height="500px">
-      <div id="slideText"><a>1. The isl& of Catan lies before you. The isle consists of 19 terrain tiles surrounded by ocean. Your goal is to settle on Catan, & exp& your territory until it becomes the largest & most glorious in Catan.</a>
+      <div id="slideText"><a>1. The island of Catan lies before you. The isle consists of 19 terrain tiles surrounded by ocean. Your goal is to settle on Catan, & expand your territory until it becomes the largest & most glorious in Catan.</a>
      </div>
   </div>
 

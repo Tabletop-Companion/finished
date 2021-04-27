@@ -59,12 +59,12 @@
 								</div>
 								
 								<input type="radio" name="rule7" value="8 Victory Points" id="8VP" />
-								<label for="8VP">8 victory points (Short game recommended for 4 players)</label> <br>
+								<label for="8VP">8 victory points (Short game, not recommended for 4 players)</label> <br>
 								<input type="radio" name="rule7" value="10 Victory Points" id="10VP"/> 
 								<label for="10VP">10 victory points (Default Amount)</label>
 								<br> 
 								<input type="radio" name="rule7" value="12 Victory Points" id="12VP" /> 
-								<label for="12VP">12 victory points (Long game recommended for 2 players)</label>
+								<label for="12VP">12 victory points (Long game, not recommended for 2 players)</label>
 								<br> 
 							</div>
 

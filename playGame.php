@@ -30,13 +30,13 @@
 			<div id="game">
 				<form id="nameForm">
 										<label for="name1">Player 1:</label>
-										<input type="text" id="name1" name="name1" value="Thomas"></input>
+										<input type="text" id="name1" name="name1" value=""></input>
 										<label for="name2">Player 2:</label>
-										<input type="text" id="name2" name="name2" value="Nini"></input>
+										<input type="text" id="name2" name="name2" value=""></input>
 										<label for="name3">Player 3:</label>
-										<input type="text" id="name3" name="name3" value="Jay"></input>
+										<input type="text" id="name3" name="name3" value=""></input>
 										<label for="name4">Player 4:</label>
-										<input type="text" id="name4" name="name4" value="Sam"></input>
+										<input type="text" id="name4" name="name4" value=""></input>
 										<button type="button" id="startButton" value="Start Game">Start Game</button>
 									</form>
 
