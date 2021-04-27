@@ -3108,7 +3108,9 @@ class Building {
     constructor(pos) {
         this.pos = pos;
         this.owner = currentPlayer;
-		this.node = grid.allNodes.get(this.pos.toString());
+		
+		if (this.pos != null)
+			this.node = grid.allNodes.get(this.pos.toString());
     }
 	
 	cancel() {
