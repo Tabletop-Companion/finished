@@ -530,10 +530,6 @@ function keyPressed() {
 			cardHUD.setHighlight(!adminHUD.show);
 			tradeHUD.setHighlight(!adminHUD.show);
 			break;
-			
-		case 'b':
-			alert(resourceCount);
-			break;
 		}
 	
 		if (keyCode === DELETE) {
@@ -951,7 +947,6 @@ function saveFile(title, text, index) {
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
-			alert(this.responseText);
 			document.getElementById("fileName"+index).innerHTML = title;
 		}
 	};
