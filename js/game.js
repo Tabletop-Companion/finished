@@ -2094,7 +2094,7 @@ class AdminHUD extends HUD {
 		
 		for (var i = 0; i < players.length; i++) {
 			var w = this.width/2-15;
-			var h = this.height/floor(players.length/2)-15;
+			var h = this.height/ceil(players.length/2)-15;
 			var xOffset = this.x+10 + (w+5)*(i%2);
 			var yOffset = this.y+10 + (h+5)*floor(i/2);
 		
@@ -2112,7 +2112,7 @@ class AdminHUD extends HUD {
 			var p = players[i];
 			
 			var width = this.width/2-15;
-			var height = this.height/floor(players.length/2)-15;
+			var height = this.height/ceil(players.length/2)-15;
 			var xOffset = this.x+10 + (width+5)*(i%2);
 			var yOffset = this.y+10 + (height+5)*floor(i/2);
 			
