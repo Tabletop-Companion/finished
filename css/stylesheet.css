@@ -546,7 +546,7 @@ header {
 	display: grid;
 	height: 100vh;
 	grid-template-columns: 3fr 1fr;
-	grid-template-rows: 0.3fr 0.3fr 3fr;
+	grid-template-rows: 15% 15% 70%;
 	grid-template-areas:
 	"nav nav"
 	"homeText sideBar"
@@ -1056,4 +1056,9 @@ grid-area: tutorialText;
 
 .fileName {
 	color: White;
+}
+
+main {
+	position: absolute;
+	z-index: -1;
 }
