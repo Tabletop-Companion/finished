@@ -626,142 +626,6 @@ header {
 	padding: 30px;
 }
 
-/*--------------Tutorial-----------*/
-
-.tutorialContainer {
-	display: grid;
-	height: 100vh;
-	grid-template-columns: 3fr 1fr;
-	grid-template-rows: 0.5fr 0.5fr 2fr 0.5fr;
-	grid-template-areas:
-	"nav nav"
-	"tutorialHeader sideBar"
-	"tutorialSlider sideBar"
-	"tutorialText sideBar";
-}
-
-#tutorialHeader {
-	grid-area: tutorialHeader;
-}
-
-#tutorialSlider {
-	grid-area: tutorialSlider;
-}
-
-#tutorialText {
-	grid-area: tutorialText;
-}
-
-#slider {
-	margin: 0 auto;
-	width: 800px;
-	max-width: 100%;
-	text-align: center;
-}
-
-#slider input[type = radio]{
-	display: none;
-}
-
-#slider label {
-	cursor: pointer;
-	text-decoration: none;
-}
-
-#slides {
-	padding: 10px;
-	border: 3px solid#ccc;
-	background: #fff;
-	position: relative;
-	z-index: 1;
-}
-
-#overflow {
-	width: 100%;
-	overflow: hidden;
-}
-
-#slide1: checked~#slides.inner {
-	margin-left: 0;
-}
-
-#slide2: checked~#slides.inner {
-	margin-left: -100%;
-}
-
-#slide3: checked~#slides.inner {
-	margin-left: -200%;
-}
-
-#slide4: checked~#slides.inner {
-	margin-left: -300%;
-}
-
-#slides.inner {
-	transition: margin-left 800ms cubic-bezier(0.770, 0.000, 0.175, 1.000);
-	width: 400%;
-	line-height: 0;
-	height: 200px;
-}
-
-#slides.slide {
-	width: 25%;
-	float: left;
-	display: block;
-	height: 100%;
-	color: #fff;
-}
-
-#slides.slide_1 {
-	background: #000;
-}
-
-#slides.slide_2 {
-	background: beige;
-}
-
-#slides.slide_3 {
-	background: pink;
-}
-
-#slides.slide_4 {
-	background: red;
-}
-
-.slide-content {
-	padding: 10px;
-}
-
-#controls {
-	margin: -130px 0 0 0;
-	width: 100%;
-	height: 50px;
-	z-index: 3;
-	position: relative;
-}
-
-#controls label {
-	transition: opacity 0.2s ease-out;
-	display: none;
-	width: 50px;
-	height: 50px;
-	opacity: 0.4;
-}
-
-#controls label:hover {
-	opacity: 1;
-}
-
-#slide1: checked~controls label: nth-child(2),
-#slide1: checked~controls label: nth-child(3),
-#slide1: checked~controls label: nth-child(4),
-#slide1: checked~controls label: nth-child(1) {
-	background: url(img / arrowRight.png);
-	background-repeat: no-repeat;
-	float: left;
-	margin: 0-50px 0 0;
-	display: block;
-}
 /*----------loggedOut---------------*/
 .loggedOutContainer {
 	display: grid;
@@ -828,17 +692,11 @@ header {
 	grid-area: tutorialSlider;
 }
 
-/*
-#tutorialText{
-grid-area: tutorialText;
-}
- */
 
 * {
 	box-sizing: border-box
 }
 
-/* Slideshow container */
 .slideshow-container {
 	max-width: 1000px;
 	position: relative;
@@ -877,9 +735,8 @@ grid-area: tutorialText;
 	background-color: #9D2212;
 }
 
-/* Caption text */
 #slideText {
-	color: #f2f2f2;
+	color: #656565;
 	font-size: 18px;
 	padding: 15px;
 	position: absolute;
