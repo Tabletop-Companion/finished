@@ -46,16 +46,17 @@
         </div>
         
         <!-- categoryy-->
-        <div id="category">
+              <div id="category">
             <div>
             <br><br>
             <li id="current"><a href="faq.php">Development Cards</a></li><br>
-            <li><a href="faq2.php">Knight / Monopoly</a></li><br>
+            <li ><a href="faq2.php">Knight / Monopoly</a></li><br>
             <li><a href="faq3.php">Road Building / Longest Road</a></li><br>
-            <li><a href="faq4.php">Gameplay / Largest Army</a></li><br>
-            <li><a href="faq2.php">Resources/ Roads /Cities and Settlements</a></li><br>
-            <li><a href="faq3.php">Rolling a 7 the Robber</a></li><br>
-            <li><a href="faq4.php">Trade / Victory / Victory Point</a></li><br>
+            <li><a href="faq4.php">Gameplay / Largest Army / Roads </a></li><br>
+            <li><a href="faq5.php"> Resources </a></li><br>
+            <li><a href="faq6.php">Rolling a 7 the Robber</a></li><br>
+            <li><a href="faq7.php">Trade / Victory / Victory Point</a></li><br>
+             <li><a href="faq8.php">Cities and Settlements</a></li><br>
              </div>
         </div>
         
