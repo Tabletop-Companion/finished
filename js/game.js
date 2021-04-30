@@ -3045,8 +3045,7 @@ class Grid {
                 if (t.number == 6 || t.number == 8) {
                     for (let n of t.neighbors) {
                         if (n.number == 6 || n.number == 8) {
-                            var temp = this.getRandomTile();
-
+                            var temp = this.getRandomTile()
                             var tNum = temp.number;
                             temp.number = t.number;
                             t.number = tNum;
@@ -3063,16 +3062,15 @@ class Grid {
         var tilesArray = Array.from(this.tiles.values());
         var temp = null;
         var i = -1;
-        var counter = 0;
+		
         while (correct === false) {
             i = (i + 1) % 19;
             temp = tilesArray[i];
-            counter++;
 
             if (temp.number != 6 && temp.number != 7 && temp.number != 8) {
                 correct = true;
 
-                for (let n in temp.neighbors) {
+                for (let n of temp.neighbors) {
                     if (n.number == 6 || n.number == 8) {
                         correct = false;
                     }
